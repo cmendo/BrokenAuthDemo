@@ -29,7 +29,7 @@ phases:
       # - docker tag brokenauthdemo:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/brokenauthdemo:latest
       # - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/brokenauthdemo:latest
       # - echo Writing image definitions file...
-      - printf '[{"name":"brokenauthdemo","imageUri":"%s"}]' $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/brokenauthdemo:latest > imagedefinitions.json
+      #- printf '[{"name":"brokenauthdemo","imageUri":"%s"}]' $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/brokenauthdemo:latest > imagedefinitions.json
 artifacts:
   files:
     - imagedefinitions.json

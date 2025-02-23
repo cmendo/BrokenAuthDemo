@@ -23,15 +23,14 @@ namespace BrokenAuthDemo.Controllers
             }
 
             // Clear the current session to invalidate the old session ID
-            //HttpContext.Session.Clear();
+            HttpContext.Session.Clear();
 
             // Vulnerable: Reusing session ID without regeneration / No clear session
             // Set the new session data
             HttpContext.Session.SetString("User", user.Username);
 
-
             // Ensure the session is saved with a new ID
-            //HttpContext.Session.CommitAsync().Wait();
+            HttpContext.Session.CommitAsync().Wait();
 
             return Ok($"Conexion exitosa de {HttpContext.Session.Id}");
         }
